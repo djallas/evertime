@@ -26,8 +26,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.10",
-    "nyc": "^13.2.0"
+    "nodemon": "^1.18.10"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -51,6 +50,7 @@
     "node-bcrypt": "0.0.1",
     "node-pre-gyp": "^0.12.0",
     "nodemailer": "^4.1.0",
+    "nyc": "^13.2.0",
     "passport": "^0.4.0",
     "passport-google-oauth": "^1.0.0",
     "pg": "^7.8.0"
