@@ -1,34 +1,6 @@
-// $(document).ready(function(){
-//       var sec = 5;
-//       var min = 5;
-//       $("#min").html(`${min>9?min:'0'+min}`);
-//       $("#sec").html(`00`);
-//       setInterval(() =>{
-//             if(sec !== 0 || min !== 0){
-//                   if(sec !== 0){
-//                         sec = sec -1;
-//                         $("#sec").html(`${sec>9?sec:'0'+sec}`);
-//                   }else{
-//                         sec = 4;
-//                         $("#sec").html(`${sec>9?sec:'0'+sec}`);
-//                         if(min !== 0){
-//                               min = min - 1;
-//                               $("#min").html(`${min>9?min:'0'+min}`);
-//                         }else{
-//                               min = 0;
-//                               sec = 0;
-//                               $("#min").html(`00`); 
-//                               $("#sec").html(`00`);
-//                         }
-//                   }
-//             }else{
-//                   $("#timeout").html("Task timeout");
-//             }
-//       },1000);
-// });
 $("#timer").submit(function(e){
       e.preventDefault();
-      const url = 'http://localhost:1000/'
+      const url = 'https://evertime.herokuapp.com/'
       var task =  $('#task').val();
       var time =  $('input[name=time]:checked').val();
       if(task.length > 2 && task.length < 120 ){
