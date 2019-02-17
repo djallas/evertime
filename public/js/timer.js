@@ -1,5 +1,6 @@
 $("#timer").submit(function(e){
       e.preventDefault();
+      $(".loading").show().html("Loading...");
       const url = 'https://evertime.herokuapp.com/'
       var task =  $('#task').val();
       var time =  $('input[name=time]:checked').val();
@@ -12,8 +13,8 @@ $("#timer").submit(function(e){
             dataType: 'json', 
             data:values,
             contentType: 'application/json; charset=utf-8',
-            timeout: 20000,  
-            success: function (data, textStatus, xhr) {  
+            timeout:10000,  
+            success: function (data, textStatus, xhr) {                  
                   $("#timer").hide();
                   $("#tasktitle").html(data.task);
                   $(".tasktimer").show();
@@ -47,8 +48,10 @@ $("#timer").submit(function(e){
                               },5000);
                         }
                   },1000);
+                  $(".loading").show().html("data returned"); 
             },
             error: function (xhr, textStatus, errorThrown) {
+                  $(".loading").show().html("error when connecting or returning data"); 
                   if(textStatus==="timeout") {
                         $(".message").show().addClass("red").html("Whooch, the server is taking to long time to respond!");
                   } else {

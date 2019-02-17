@@ -6,7 +6,7 @@ export default class Task {
   // query all posts from the database
   static getAllTasks(req, res) {
     querytask.getAll().then((task) => {
-      res.render('posts', { task: task, user: req.user});      
+      res.render('index', { task: task, user: req.user});      
     });
   }
 
@@ -24,7 +24,7 @@ export default class Task {
           id:task[0].id,
           task:task[0].task,
           time:task[0].time,
-          message: "Time created successfully"
+          message: "Timer created successfully"
         }
       )  
       )    
