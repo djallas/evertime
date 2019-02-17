@@ -52,8 +52,7 @@ $("#timer").submit(function(e){
                   if(textStatus==="timeout") {
                         $(".message").show().addClass("red").html("Whooch, the server is taking to long time to respond!");
                   } else {
-                        console.log(xhr.responseText);
-                        // $(".message").show().addClass("red").html(data.message);
+                        $(".message").show().addClass("red").html("Whoooch, Error occured. Try again later");
                   } 
             }  
       });
