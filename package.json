@@ -1,5 +1,5 @@
 {
-  "name": "niveloio",
+  "name": "tasktimer",
   "version": "1.0.0",
   "description": "Nivelo api",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/niveloio/niveloio.git"
+    "url": "git+https://github.com/tasktimer/tasktimer.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/niveloio/niveloio/issues"
+    "url": "https://github.com/tasktimer/tasktimer/issues"
   },
-  "homepage": "https://github.com/niveloio/niveloio#readme",
+  "homepage": "https://github.com/tasktimer/tasktimer#readme",
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",

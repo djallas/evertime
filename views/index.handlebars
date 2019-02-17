@@ -1,6 +1,51 @@
-<div class="row center-align">
-  {{#if user.names }}
-  <h2> {{ user.names }} </h2>
-  {{/if}}
-    <h5>Welcome to Nivelo Lab</h5>
+<div class="row" style="margin-top:155px">
+  <div  class="col s8 push-s2 white" style="border-radius:10px;padding:35px 0;box-shadow: 0 0 25px 25px rgba(0,0,0,0.3)">
+
+    {{!-- form create timer --}}
+    <form action="/" method="POST" id="timer">
+      <div class="row center">
+        <div class="col s3 push-s3">
+          <input name="time" value="60" type="radio" id="min60" />
+          <label for="min60">60'</label>
+        </div>
+        <div class="col s3 push-s2">
+          <input name="time" value="30" type="radio" id="min30" />
+          <label for="min30">30'</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <input placeholder="Type your task" style="text-align:center;" name="task" id="task" type="text" autocomplete="off" class="validate black-text">
+      </div>
+      <div class="row">
+        <button type="submit" class="btn z-depth-0 green">Go</button>
+      </div>
+    </form>
+    {{!-- form end create timer --}}
+
+    {{!-- start count down  --}}
+    <div class="black-text tasktimer" style="display:none">
+      <div>Count down</div>
+      <div class="xl-text" style="margin:25px 0">
+        <span id="min">00</span>:<span id="sec">00</span>
+      </div>
+      <br>
+      <div>Task</div>
+      <div id="tasktitle" class="xl-text"></div>
+      <div id="timeout" class="xl-text"></div>
+      <div class="row">
+        <a href="/" class="btn z-depth-0 red darken-3 white-text">Restart</a>
+      </div>
+    </div>
+    {{!-- end count down  --}}
+
+  </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    var h = $(this).height();
+    $(".bg").css({
+      "height": h+"px"
+    });
+  });
+</script>

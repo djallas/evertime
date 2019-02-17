@@ -1,7 +1,18 @@
 a{color:#000000!important}
+.container{width:900px}
 .brand-logo{height: 50px;width: auto;margin:5px 0;}
 .brand-logo img{height: 50px;width: auto;}
 .bold{font-weight: bold}
+
+header, main, footer {padding-left: 300px;}
+
+ @media only screen and (max-width : 992px) {
+   header, main, footer {padding-left: 0;}
+ }
+ .side-nav{width:250px}
+ .side-nav li{padding-left:0px;position: relative;}
+ /* .side-nav li .fas{position: absolute;left:-20px;color:#989898;} */
+ .side-nav li .fas{position: relative;margin-right:20px;color:#989898;}
 /* Padding Formatting */
 .xxl-padding{padding:120px 0}
 .xl-padding{padding:30px}
@@ -37,6 +48,12 @@ a{color:#000000!important}
 .l-v-b-margin{margin-top:0;margin-bottom:15px}
 .m-v-b-margin{margin-top:0;margin-bottom:10px}
 .s-v-b-margin{margin-top:0;margin-bottom:5px}
+/*border*/
+.border{border:solid 1px #202020}
+.b-black{border-color: #101010}
+.b-red{border-color: #c62828 }
+.b-dimgray{border-color:#696969}
+.b-lite{border-color:#adadad}
 
 /* profile avatar */
 .profile{margin: 0;width: 100%;overflow: hidden}
@@ -54,6 +71,21 @@ a{color:#000000!important}
 .m-text{font-size: 16px}
 .s-text{font-size:12px}
 
+/* List */
+.list-inline li{display:inline}
+.list-block li{display:block}
+
 /* user nav */
 .userNav{border-bottom:1px solid #cdcdcd}
 .userNav a{color:#000000}
+
+.main-menu a{color:#252525!important}
+
+.subnav{border-bottom: 1px solid #cdcdcd;padding:10px 0}
+.subnav li{padding:10px 20px}
+.subnav .active{font-weight: bold;border-bottom:3px solid #656565}
+
+.onepost{padding:15px 0;border-bottom: 1px solid #dedede;}
+.onepost .action a{padding:0 10px}
+
+#sec, #min{padding:8px 20px;border-radius: 3px;background: #cfcfcf}

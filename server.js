@@ -7,9 +7,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(morgan('dev'));
 
-
-
-import passport  from 'passport';
 // // cookie
 const cookieSession = require('cookie-session');
 
@@ -18,36 +15,36 @@ app.use(cookieSession({
   keys: [process.env.COOKIE_KEY]
 }));
 
-// initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
-
-
 // calling routes
 import routers from './routes/router';
 // register routes
 app.use(routers);
 
-
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 1000;
 
 import  exphbs from 'express-handlebars';
 import path from 'path';
 
-// View engine setup
-// app.engine('handlebars', exphbs());
+var hbs = exphbs.create({ 
+  helpers: {
+    yes: function () { return 'date'; }
+  }
+ });
+
+// Register `hbs.engine` with the Express app.
+app.engine('handlebars', hbs.engine);
+
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   partialsDir: [
     'views/includes/'
   ]
 }));
-app.set('view engine', 'handlebars');
 
+app.set('view engine', 'handlebars');
 
 // Static folder
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
 
 // error handler
 app.use((req, res, next) => {
