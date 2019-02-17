@@ -4,7 +4,7 @@
   "description": "Nivelo api",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node server.js",
+    "start": "babel-node --presets es2015 server.js",
     "dev": "nodemon --exec babel-node server.js"
   },
   "repository": {
@@ -21,7 +21,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "coveralls": "^3.0.2",
-    "eslint": "^5.13.0",
+    "eslint": "^5.14.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
     "mocha": "^5.2.0",
@@ -32,6 +32,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
+    "babel-preset-es2015": "^6.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cookie-session": "^2.0.0-beta.3",
