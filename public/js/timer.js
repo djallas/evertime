@@ -13,7 +13,7 @@ $("#timer").submit(function(e){
             dataType: 'json', 
             data:values,
             contentType: 'application/json; charset=utf-8',
-            timeout:10000,  
+            timeout:30000,  
             success: function (data, textStatus, xhr) {  
                   console.log(data);                
                   $("#timer").hide();
@@ -52,7 +52,6 @@ $("#timer").submit(function(e){
                   $(".loading").show().html("data returned"); 
             },
             error: function (xhr, textStatus, errorThrown) {
-                  console.log(xhr);
                   console.log(errorThrown);
                   $(".loading").show().html("error when connecting or returning data"); 
                   if(textStatus==="timeout") {
