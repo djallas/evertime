@@ -14,7 +14,7 @@ export default class Task {
   static createTask(req, res) {
     const task = {
       task: req.body.task,
-      time: req.body.time
+      time: parseInt(req.body.time)
     }
     querytask
       .create(task)
@@ -29,6 +29,7 @@ export default class Task {
       )  
       )    
       .catch((error) => {
+        console.log(error);
         res.status(301).send({
           error:true,
           id: task.id,
