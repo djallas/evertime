@@ -1,7 +1,7 @@
 $("#timer").submit(function(e){
       e.preventDefault();
       $(".loading").show().html("Loading...");
-      const url = 'http://localhost:1000/'
+      const url = 'https://evertime.herokuapp.com/'
       var task =  $('#task').val();
       var time =  $('input[name=time]:checked').val();
       if(task.length > 2 && task.length < 120 ){
