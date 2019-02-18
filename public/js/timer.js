@@ -1,7 +1,7 @@
 $("#timer").submit(function(e){
       e.preventDefault();
       $(".loading").show().html("Loading...");
-      const url = 'https://evertime.herokuapp.com/'
+      const url = 'http://localhost:1000/'
       var task =  $('#task').val();
       var time =  $('input[name=time]:checked').val();
       if(task.length > 2 && task.length < 120 ){
@@ -23,7 +23,7 @@ $("#timer").submit(function(e){
                   var sec = 59;
                   var min = data.time - 1;
                   $("#min").html(`${min>9?min:'0'+min}`);
-                  $("#sec").html(`00`);
+                  $("#sec").html(`59`);
                   setInterval(() =>{
                         if(sec !== 0 || min !== 0){
                               if(sec !== 0){
@@ -40,6 +40,7 @@ $("#timer").submit(function(e){
                                           sec = 0;
                                           $("#min").html(`00`); 
                                           $("#sec").html(`00`);
+                                          
                                     }
                               }
                         }else{
@@ -52,6 +53,7 @@ $("#timer").submit(function(e){
                   },1000);
             },
             error: function (xhr, textStatus, errorThrown) {
+                  console.log(xhr);  
                   console.log(errorThrown);  
                   $(".loading").hide();
                   $(".loading").show().html("error when connecting or returning data"); 
