@@ -25,13 +25,15 @@ const PORT = process.env.PORT || 1000;
 import  exphbs from 'express-handlebars';
 import path from 'path';
 
-var hbs = exphbs.create({ 
+var hbs = exphbs.create({
+  foos:"foos",
+  // Specify helpers which are only registered on this instance.
   helpers: {
-    yes: function () { return 'date'; }
+      foo: function () { return 'FOO!'; },
+      bar: function () { return 'BAR!'; }
   }
- });
+});
 
-// Register `hbs.engine` with the Express app.
 app.engine('handlebars', hbs.engine);
 
 app.engine('handlebars', exphbs({

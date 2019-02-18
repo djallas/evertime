@@ -15,7 +15,8 @@ $("#timer").submit(function(e){
             contentType: 'application/json; charset=utf-8',
             timeout:30000,  
             success: function (data, textStatus, xhr) {  
-                  console.log(data);                
+                  console.log(data);     
+                  $(".loading").hide();           
                   $("#timer").hide();
                   $("#tasktitle").html(data.task);
                   $(".tasktimer").show();
@@ -51,7 +52,8 @@ $("#timer").submit(function(e){
                   },1000);
             },
             error: function (xhr, textStatus, errorThrown) {
-                  console.log(errorThrown);
+                  console.log(errorThrown);  
+                  $(".loading").hide();
                   $(".loading").show().html("error when connecting or returning data"); 
                   if(textStatus==="timeout") {
                         $(".message").show().addClass("red").html("Whooch, the server is taking to long time to respond!");
