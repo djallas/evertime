@@ -32,7 +32,7 @@ export default class Task {
         res.status(301).send({
           error:true,
           id: task.id,
-          message:err,
+          message:error,
         })
       });
   }
